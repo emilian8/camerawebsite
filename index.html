@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>leiscamera</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text: #f6f1ec;
+      --ink: #2c211a;
+      --paper: #f8f4ef;
+      --muted: #e6ddd6;
+      --accent: #f1c8b2;
+      --shadow: 0 12px 40px rgba(0,0,0,0.25);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Work Sans", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      min-height: 100vh;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 48px 24px 64px;
+      overflow: hidden;
+    }
+    .bg {
+      position: absolute;
+      inset: 0;
+      background: url("https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?auto=format&fit=crop&w=1600&q=80") center center / cover no-repeat;
+      filter: saturate(0.95);
+      z-index: 0;
+    }
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.35) 70%, rgba(0,0,0,0.45) 100%);
+      z-index: 1;
+    }
+
+    header {
+      position: absolute;
+      top: 28px;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      pointer-events: none;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      background: rgba(0,0,0,0.15);
+      padding: 14px 24px;
+      border-radius: 999px;
+      backdrop-filter: blur(4px);
+      pointer-events: auto;
+    }
+    .brand {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600;
+      font-size: 26px;
+      letter-spacing: 0.02em;
+      margin-right: 14px;
+    }
+    nav a {
+      font-family: "Work Sans", "Segoe UI", sans-serif;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 10px;
+      position: relative;
+      transition: color 0.2s ease;
+    }
+    nav a:hover { color: var(--text); }
+    nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 6px;
+      height: 1px;
+      background: var(--text);
+      opacity: 0.85;
+    }
+
+    .social {
+      position: absolute;
+      top: 32px;
+      left: 32px;
+      display: flex;
+      gap: 14px;
+      z-index: 2;
+    }
+    .icon {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,0.8);
+      border-radius: 6px;
+      color: var(--text);
+      background: rgba(0,0,0,0.2);
+      backdrop-filter: blur(4px);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .icon:hover { transform: translateY(-2px); background: rgba(0,0,0,0.35); }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+      display: grid;
+      gap: 24px;
+      justify-items: center;
+      color: var(--text);
+    }
+    h1 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      font-size: clamp(34px, 4vw, 44px);
+      letter-spacing: 0.02em;
+    }
+    .btn {
+      padding: 14px 20px;
+      border: none;
+      border-radius: 4px;
+      background: var(--accent);
+      color: #3f2a22;
+      font-family: "Work Sans", "Segoe UI", sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 16px 42px rgba(0,0,0,0.3); }
+    .btn:active { transform: translateY(0); }
+
+    .section {
+      padding: clamp(56px, 12vw, 110px) clamp(18px, 8vw, 96px);
+      background: var(--paper);
+      color: var(--ink);
+    }
+    .section.light {
+      background: #ffffff;
+    }
+    .intro {
+      text-align: center;
+      display: grid;
+      gap: 12px;
+    }
+    .intro h2 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(32px, 5vw, 42px);
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+    .intro p {
+      margin: 0;
+      font-size: 16px;
+      color: #5d5046;
+    }
+    .gallery {
+      display: grid;
+      gap: 22px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+    .gallery figure {
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #d9d2cb;
+      box-shadow: 0 18px 36px rgba(0,0,0,0.08);
+      min-height: 220px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s ease;
+    }
+    .gallery figure:hover img {
+      transform: scale(1.03);
+    }
+    .full-bleed {
+      grid-column: 1 / -1;
+      min-height: clamp(260px, 50vw, 480px);
+    }
+    .footer {
+      padding: 48px clamp(18px, 8vw, 96px) 64px;
+      background: #0f0b09;
+      color: var(--text);
+      display: grid;
+      gap: 8px;
+      text-align: center;
+    }
+    .footer .brand {
+      color: var(--text);
+      font-size: 24px;
+    }
+    .footer a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .footer a:hover { color: var(--text); }
+
+    @media (max-width: 640px) {
+      .nav {
+        gap: 14px;
+        padding: 12px 18px;
+      }
+      nav a {
+        font-size: 14px;
+        padding: 6px 8px;
+      }
+      .social {
+        top: 22px;
+        left: 18px;
+      }
+      .gallery figure {
+        border-radius: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="bg" aria-hidden="true"></div>
+    <div class="overlay" aria-hidden="true"></div>
+
+    <div class="social">
+      <a class="icon" aria-label="Instagram" href="#">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      </a>
+      <a class="icon" aria-label="Email" href="#">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16v16H4z"></path>
+          <polyline points="4 6 12 13 20 6"></polyline>
+        </svg>
+      </a>
+    </div>
+
+    <header>
+      <div class="nav">
+        <div class="brand">leiscamera</div>
+        <nav>
+          <a class="active" href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="#">Pricing</a>
+          <a href="#">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="content">
+      <h1>capturing life's captivating moments</h1>
+      <button class="btn">Contact Now</button>
+    </div>
+  </div>
+
+  <section class="section intro">
+    <h2>Leilani Camacho</h2>
+    <p>Wedding &amp; Portrait Photographer</p>
+    <p>Based in Portland — available wherever your story goes.</p>
+  </section>
+
+  <section class="section light">
+    <div class="gallery">
+      <div class="gallery-grid">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80" alt="Tablescape placeholder">
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1511288593014-8acb33db1c83?auto=format&fit=crop&w=1200&q=80" alt="Details placeholder">
+        </figure>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="full-bleed">
+          <img src="https://images.unsplash.com/photo-1499955085172-a104c9463ece?auto=format&fit=crop&w=1600&q=80" alt="Bridal portrait placeholder">
+        </figure>
+      </div>
+
+      <div class="gallery-grid">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1200&q=80" alt="Bouquet placeholder">
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1441123100240-f9f3f77ed41b?auto=format&fit=crop&w=1200&q=80" alt="Couple placeholder">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="brand">leiscamera</div>
+    <div>Capturing heartfelt stories in timeless frames.</div>
+    <div>
+      <a href="mailto:leiscameraphotography@gmail.com">leiscameraphotography@gmail.com</a>
+    </div>
+    <div>
+      <a href="#">Instagram</a> • <a href="#">Portfolio</a> • <a href="#">Booking</a>
+    </div>
+  </footer>
+</body>
+</html>
