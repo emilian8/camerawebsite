@@ -141,6 +141,38 @@
       .row { grid-template-columns: 1fr; }
       figure { min-height: clamp(240px, 60vw, 400px); }
     }
+
+    .site-footer {
+      padding: 52px clamp(18px, 8vw, 96px) 68px;
+      background: #f5f3ef;
+      color: #1f1915;
+      display: grid;
+      gap: 12px;
+      text-align: center;
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+    .site-footer .name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 26px;
+      letter-spacing: 0.01em;
+      font-weight: 500;
+    }
+    .site-footer .tagline {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 16px;
+      font-style: italic;
+      color: #51443a;
+    }
+    .site-footer .dash {
+      font-family: "Cormorant Garamond", serif;
+      color: #8a7b70;
+    }
+    .site-footer a {
+      color: #1f1915;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .site-footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -167,8 +199,8 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a class="active" href="gallery.html">Gallery</a>
-        <a href="#">Pricing</a>
-        <a href="#">Contact</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </header>
 
@@ -200,5 +232,12 @@
       </div>
     </div>
   </div>
+
+  <footer class="site-footer">
+    <div class="name">Leilani Camacho</div>
+    <div class="tagline">Wedding &amp; Portrait Photographer</div>
+    <div class="dash">—</div>
+    <div><a href="mailto:leiscameraphotography@gmail.com">leiscameraphotography@gmail.com</a></div>
+  </footer>
 </body>
 </html>

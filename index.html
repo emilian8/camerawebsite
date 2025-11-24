@@ -207,24 +207,37 @@
       grid-column: 1 / -1;
       min-height: clamp(260px, 50vw, 480px);
     }
-    .footer {
-      padding: 48px clamp(18px, 8vw, 96px) 64px;
-      background: #0f0b09;
-      color: var(--text);
+    .site-footer {
+      padding: 52px clamp(18px, 8vw, 96px) 68px;
+      background: #f5f3ef;
+      color: #1f1915;
       display: grid;
-      gap: 8px;
+      gap: 12px;
       text-align: center;
+      border-top: 1px solid rgba(0,0,0,0.05);
     }
-    .footer .brand {
-      color: var(--text);
-      font-size: 24px;
+    .site-footer .name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 26px;
+      letter-spacing: 0.01em;
+      font-weight: 500;
     }
-    .footer a {
-      color: var(--muted);
+    .site-footer .tagline {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 16px;
+      font-style: italic;
+      color: #51443a;
+    }
+    .site-footer .dash {
+      font-family: "Cormorant Garamond", serif;
+      color: #8a7b70;
+    }
+    .site-footer a {
+      color: #1f1915;
       text-decoration: none;
-      transition: color 0.2s ease;
+      font-weight: 500;
     }
-    .footer a:hover { color: var(--text); }
+    .site-footer a:hover { text-decoration: underline; }
 
     @media (max-width: 640px) {
       .nav {
@@ -273,8 +286,8 @@
           <a class="active" href="index.html">Home</a>
           <a href="about.html">About</a>
           <a href="gallery.html">Gallery</a>
-          <a href="#">Pricing</a>
-          <a href="#">Contact</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="contact.html">Contact</a>
         </nav>
       </div>
     </header>
@@ -319,15 +332,11 @@
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="brand">leiscamera</div>
-    <div>Capturing heartfelt stories in timeless frames.</div>
-    <div>
-      <a href="mailto:leiscameraphotography@gmail.com">leiscameraphotography@gmail.com</a>
-    </div>
-    <div>
-      <a href="#">Instagram</a> • <a href="#">Portfolio</a> • <a href="#">Booking</a>
-    </div>
+  <footer class="site-footer">
+    <div class="name">Leilani Camacho</div>
+    <div class="tagline">Wedding &amp; Portrait Photographer</div>
+    <div class="dash">—</div>
+    <div><a href="mailto:leiscameraphotography@gmail.com">leiscameraphotography@gmail.com</a></div>
   </footer>
 </body>
 </html>
