@@ -122,15 +122,10 @@
       position: absolute;
       left: clamp(18px, 4vw, 42px);
       top: 18px;
-      font-family: "IvyPrestoLightItalicDisp", "Playfair Display", serif;
-      font-size: clamp(22px, 3vw, 30px);
-      font-weight: 400;
-      font-style: italic;
-      letter-spacing: 0.1em;
-      font-family: "Cormorant Garamond", serif;
+      font-family: "Sackers Italian", serif;
       font-size: clamp(22px, 3vw, 28px);
-      font-weight: 600;
-      font-style: italic;
+      font-weight: 400;
+      font-style: normal;
       letter-spacing: 0.08em;
       color: var(--text);
       text-transform: lowercase;
@@ -168,35 +163,15 @@
     .logo-mark {
       position: relative;
       z-index: 2;
-      width: clamp(140px, 16vw, 190px);
-      height: clamp(140px, 16vw, 190px);
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.6);
+      width: clamp(150px, 14vw, 190px);
       display: grid;
       place-items: center;
-      backdrop-filter: blur(4px);
-      background: rgba(0,0,0,0.25);
-      letter-spacing: 0.16em;
-      font-family: "Sackers Italian", "Instrument Serif", serif;
-      font-weight: 400;
-      font-size: clamp(60px, 8vw, 82px);
-      letter-spacing: 0.12em;
-      font-family: "Cormorant Garamond", serif;
-      font-weight: 600;
-      font-size: clamp(58px, 8vw, 78px);
     }
-    .logo-mark::before,
-    .logo-mark::after {
-      content: "";
-      position: absolute;
-      height: 1px;
-      width: clamp(90px, 10vw, 120px);
-      background: rgba(255,255,255,0.45);
-      left: 50%;
-      transform: translateX(-50%);
+    .logo-mark svg {
+      width: 100%;
+      height: auto;
+      display: block;
     }
-    .logo-mark::before { top: 12px; }
-    .logo-mark::after { bottom: 12px; }
 
     .section {
       padding: clamp(56px, 12vw, 110px) clamp(18px, 8vw, 96px);
@@ -332,7 +307,31 @@
       </div>
     </header>
 
-    <div class="logo-mark" aria-label="Leis Camera monogram">LC</div>
+    <div class="logo-mark" aria-label="Leis Camera monogram" role="img">
+      <svg width="200" height="300" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <ellipse
+          cx="100"
+          cy="150"
+          rx="88"
+          ry="130"
+          fill="none"
+          stroke="rgba(255,255,255,0.55)"
+          stroke-width="2"
+        />
+        <text
+          x="50%"
+          y="52%"
+          text-anchor="middle"
+          dominant-baseline="middle"
+          fill="white"
+          font-size="86"
+          font-family="Sackers Italian, serif"
+          letter-spacing="1.5"
+        >
+          LC
+        </text>
+      </svg>
+    </div>
   </div>
 
   <script>
