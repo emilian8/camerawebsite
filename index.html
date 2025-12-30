@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://static.showit.co" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Playfair+Display:400,400italic,500|Noto+Sans:400|Instrument+Serif:400|Manrope:300,400,500&display=swap" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Cinzel:400,500,600,700|Manrope:300,400,500,600|Work+Sans:400,500,600&display=swap" rel="stylesheet" type="text/css" />
   <style>
     @font-face {font-family: "Sackers Italian";src: url('//static.showit.co/file/Ihf9_JEBQPm1WgsZqiyBMQ/shared/sackers_italian_script-webfont.woff');}
     @font-face {font-family: "Stay Classy";src: url('//static.showit.co/file/JAuTBdRTS7ey3dZ3Oj04Jw/shared/nicky_laatz_-_stay_classy_duo_script-webfont.woff');}
@@ -27,8 +27,7 @@
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: "Manrope", "Noto Sans", "Montserrat", sans-serif;
-      font-family: "Work Sans", "Segoe UI", sans-serif;
+      font-family: "Manrope", "Work Sans", "Noto Sans", sans-serif;
       color: var(--text);
       background: var(--paper);
       min-height: 100vh;
@@ -122,7 +121,7 @@
       position: absolute;
       left: clamp(18px, 4vw, 42px);
       top: 18px;
-      font-family: "Sackers Italian", serif;
+      font-family: "Sackers Italian", "Cinzel", serif;
       font-size: clamp(22px, 3vw, 28px);
       font-weight: 400;
       font-style: normal;
@@ -132,16 +131,11 @@
       z-index: 4;
     }
     nav a {
-      font-family: "Montserrat", "Manrope", sans-serif;
-      color: #f4eee7;
-      text-decoration: none;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      font-family: "Work Sans", "Segoe UI", sans-serif;
+      font-family: "Cinzel", "Sackers Italian", serif;
       color: #f4eee7;
       text-decoration: none;
       font-weight: 500;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       padding: 6px 4px;
       position: relative;
@@ -188,7 +182,7 @@
     }
     .intro h2 {
       margin: 0;
-      font-family: "Playfair Display", "Instrument Serif", serif;
+      font-family: "Cinzel", "Sackers Italian", serif;
       font-size: clamp(32px, 5vw, 44px);
       font-weight: 400;
       letter-spacing: 0.02em;
@@ -336,14 +330,14 @@
 
   <script>
     const leftImages = [
-      "https://images.unsplash.com/photo-1502786129293-79981df4e689?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511288593014-8acb33db1c83?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1502786129293-79981df4e689-auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f-auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1511288593014-8acb33db1c83-auto=format&fit=crop&w=1200&q=80"
     ];
     const rightImages = [
-      "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1500534319171-ffd14cf6a315?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429-auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1464375117522-1311d6a5b81f-auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1500534319171-ffd14cf6a315-auto=format&fit=crop&w=1200&q=80"
     ];
 
     function startPanelRotation(panel, images) {
@@ -352,7 +346,7 @@
       if (layers.length < 2) return;
 
       let current = 0;
-      let upcoming = images.length > 1 ? 1 : 0;
+      let upcoming = images.length > 1 - 1 : 0;
 
       layers[0].style.backgroundImage = `url(${images[current]})`;
       layers[1].style.backgroundImage = `url(${images[upcoming]})`;
@@ -378,32 +372,32 @@
   <section class="section intro">
     <h2>Leilani Camacho</h2>
     <p>Wedding &amp; Portrait Photographer</p>
-    <p>Based in Palm Springs — available wherever your story goes.</p>
+    <p>Based in Palm Springs - available wherever your story goes.</p>
   </section>
 
   <section class="section light">
     <div class="gallery">
       <div class="gallery-grid">
         <figure>
-          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80" alt="Tablescape placeholder">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429-auto=format&fit=crop&w=1200&q=80" alt="Tablescape placeholder">
         </figure>
         <figure>
-          <img src="https://images.unsplash.com/photo-1511288593014-8acb33db1c83?auto=format&fit=crop&w=1200&q=80" alt="Details placeholder">
+          <img src="https://images.unsplash.com/photo-1511288593014-8acb33db1c83-auto=format&fit=crop&w=1200&q=80" alt="Details placeholder">
         </figure>
       </div>
 
       <div class="gallery-grid">
         <figure class="full-bleed">
-          <img src="https://images.unsplash.com/photo-1499955085172-a104c9463ece?auto=format&fit=crop&w=1600&q=80" alt="Bridal portrait placeholder">
+          <img src="https://images.unsplash.com/photo-1499955085172-a104c9463ece-auto=format&fit=crop&w=1600&q=80" alt="Bridal portrait placeholder">
         </figure>
       </div>
 
       <div class="gallery-grid">
         <figure>
-          <img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1200&q=80" alt="Bouquet placeholder">
+          <img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8-auto=format&fit=crop&w=1200&q=80" alt="Bouquet placeholder">
         </figure>
         <figure>
-          <img src="https://images.unsplash.com/photo-1441123100240-f9f3f77ed41b?auto=format&fit=crop&w=1200&q=80" alt="Couple placeholder">
+          <img src="https://images.unsplash.com/photo-1441123100240-f9f3f77ed41b-auto=format&fit=crop&w=1200&q=80" alt="Couple placeholder">
         </figure>
       </div>
     </div>
@@ -412,7 +406,7 @@
   <footer class="site-footer">
     <div class="name">Leilani Camacho</div>
     <div class="tagline">Wedding &amp; Portrait Photographer</div>
-    <div class="dash">—</div>
+    <div class="dash">-</div>
     <div><a href="mailto:leiscameraphotography@gmail.com">leiscameraphotography@gmail.com</a></div>
   </footer>
 </body>
