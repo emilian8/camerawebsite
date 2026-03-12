@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>leiscamera</title>
+  <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://static.showit.co" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -224,7 +225,9 @@
     .full-bleed {
       grid-column: 1 / -1;
       min-height: clamp(260px, 50vw, 480px);
+      background: #efe7de;
     }
+    .full-bleed img { object-fit: contain; }
     .site-footer {
       padding: 52px clamp(18px, 8vw, 96px) 68px;
       background: #f5f3ef;
@@ -330,14 +333,18 @@
 
   <script>
     const leftImages = [
-      "https://images.unsplash.com/photo-1502786129293-79981df4e689-auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f-auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511288593014-8acb33db1c83-auto=format&fit=crop&w=1200&q=80"
+      "images/beach-couple-walk.jpg",
+      "images/bride-pond-portrait.jpg",
+      "images/studio-couple-seated.jpg",
+      "images/desert-couple-bouquet.jpg",
+      "images/reception-couple-hallway.jpg"
     ];
     const rightImages = [
-      "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429-auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1464375117522-1311d6a5b81f-auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1500534319171-ffd14cf6a315-auto=format&fit=crop&w=1200&q=80"
+      "images/beach-dress-detail.jpg",
+      "images/bride-bouquet-portrait.jpg",
+      "images/wedding-table-setting.jpg",
+      "images/desert-couple-champagne-toast.jpg",
+      "images/bridal-closeup-smile.jpg"
     ];
 
     function startPanelRotation(panel, images) {
@@ -346,7 +353,7 @@
       if (layers.length < 2) return;
 
       let current = 0;
-      let upcoming = images.length > 1 - 1 : 0;
+      let upcoming = images.length > 1 ? 1 : 0;
 
       layers[0].style.backgroundImage = `url(${images[current]})`;
       layers[1].style.backgroundImage = `url(${images[upcoming]})`;
@@ -379,25 +386,25 @@
     <div class="gallery">
       <div class="gallery-grid">
         <figure>
-          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429-auto=format&fit=crop&w=1200&q=80" alt="Tablescape placeholder">
+          <img src="images/wedding-table-setting.jpg" alt="Styled wedding reception table">
         </figure>
         <figure>
-          <img src="https://images.unsplash.com/photo-1511288593014-8acb33db1c83-auto=format&fit=crop&w=1200&q=80" alt="Details placeholder">
+          <img src="images/wedding-invitation-suite.jpg" alt="Wedding invitation suite">
         </figure>
       </div>
 
       <div class="gallery-grid">
         <figure class="full-bleed">
-          <img src="https://images.unsplash.com/photo-1499955085172-a104c9463ece-auto=format&fit=crop&w=1600&q=80" alt="Bridal portrait placeholder">
+          <img src="images/reception-first-dance.jpg" alt="First dance portrait">
         </figure>
       </div>
 
       <div class="gallery-grid">
         <figure>
-          <img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8-auto=format&fit=crop&w=1200&q=80" alt="Bouquet placeholder">
+          <img src="images/bridal-bouquet-indoor.jpg" alt="Bride holding bouquet indoors">
         </figure>
         <figure>
-          <img src="https://images.unsplash.com/photo-1441123100240-f9f3f77ed41b-auto=format&fit=crop&w=1200&q=80" alt="Couple placeholder">
+          <img src="images/studio-couple-bouquet.jpg" alt="Minimal indoor couple portrait">
         </figure>
       </div>
     </div>

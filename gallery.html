@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery | leiscamera</title>
+  <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://static.showit.co" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -205,7 +206,9 @@
     .full-bleed {
       grid-column: 1 / -1;
       min-height: clamp(260px, 50vw, 480px);
+      background: #efe7de;
     }
+    .full-bleed img { object-fit: contain; }
 
     .site-footer {
       padding: 52px clamp(18px, 8vw, 96px) 68px;
@@ -283,14 +286,18 @@
 
   <script>
     const leftImages = [
-      "https://images.unsplash.com/photo-1500534319171-ffd14cf6a315?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1600&q=80"
+      "images/family-red-dresses-group.jpg",
+      "images/couple-with-dogs-portrait.jpg",
+      "images/engagement-closeup-bw.jpg",
+      "images/church-ceremony-front.jpg",
+      "images/reception-first-dance.jpg"
     ];
     const rightImages = [
-      "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1441123694162-e54a981ceba3?auto=format&fit=crop&w=1600&q=80"
+      "images/bride-full-length-portrait.jpg",
+      "images/wedding-accessories-flatlay.jpg",
+      "images/studio-couple-standing.jpg",
+      "images/church-recessional-portrait.jpg",
+      "images/exterior-couple-bw-walk.jpg"
     ];
 
     function startPanelRotation(panel, images) {
@@ -326,31 +333,31 @@
     <div class="gallery">
       <div class="gallery-grid">
         <figure>
-          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80" alt="Portrait placeholder">
+          <img src="images/bride-full-length-portrait.jpg" alt="Bride portrait outdoors">
         </figure>
         <figure>
-          <img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1400&q=80" alt="Bouquet placeholder">
+          <img src="images/wedding-accessories-flatlay.jpg" alt="Wedding accessories flat lay">
         </figure>
         <figure>
-          <img src="https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?auto=format&fit=crop&w=1400&q=80" alt="Details placeholder">
+          <img src="images/bridal-editorial-seated.jpg" alt="Editorial bridal portrait">
         </figure>
       </div>
 
       <div class="gallery-grid">
         <figure class="full-bleed">
-          <img src="https://images.unsplash.com/photo-1504203700686-0f3a654864c7?auto=format&fit=crop&w=1800&q=80" alt="Landscape placeholder">
+          <img src="images/family-red-dresses-group.jpg" alt="Family portrait in coordinated red dresses">
         </figure>
       </div>
 
       <div class="gallery-grid">
         <figure>
-          <img src="https://images.unsplash.com/photo-1511288593014-8acb33db1c83?auto=format&fit=crop&w=1400&q=80" alt="Couple placeholder">
+          <img src="images/desert-couple-boulders-portrait.jpg" alt="Couple portrait among Joshua Tree boulders">
         </figure>
         <figure>
-          <img src="https://images.unsplash.com/photo-1441123694162-e54a981ceba3?auto=format&fit=crop&w=1400&q=80" alt="Ceremony placeholder">
+          <img src="images/church-recessional-portrait.jpg" alt="Newlyweds walking down the aisle">
         </figure>
         <figure>
-          <img src="https://images.unsplash.com/photo-1499955085172-a104c9463ece?auto=format&fit=crop&w=1400&q=80" alt="Bridal portrait placeholder">
+          <img src="images/studio-couple-standing.jpg" alt="Minimal studio couple portrait">
         </figure>
       </div>
     </div>
